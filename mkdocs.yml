@@ -1,0 +1,67 @@
+site_name: Bhavesh Assistant Wiki
+site_description: Pucho AI Knowledge Base
+docs_dir: wiki
+site_dir: _site
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.integrate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Products:
+    - Overview: products/pucho-ai-platform.md
+    - Pucho Office Excel: products/pucho-office-excel.md
+    - Pucho Office PPT: products/pucho-office-ppt.md
+    - Pucho AI Studio: products/pucho-ai-studio.md
+    - PuchoSetu: products/puchosetu.md
+    - Sportix: products/sportix.md
+    - OpenClaw / Guru: products/openclaw-guru.md
+  - API:
+    - Pucho API Schema: api/pucho-api-schema.md
+  - Infrastructure:
+    - EC2 Setup: infrastructure/ec2-setup.md
+    - ML GPU Infra: infrastructure/ml-gpu-infra.md
+  - ML:
+    - Text-to-SQL: ml/text-to-sql.md
+  - Architecture:
+    - MIT-First Rule: architecture/mit-first-rule.md
+    - Never-Do List: architecture/never-do-list.md
+  - Reference:
+    - Tally Schema: reference/tally-schema.md

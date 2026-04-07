@@ -4,6 +4,9 @@ wiki/.obsidian/workspace-mobile.json
 wiki/.obsidian/plugins/
 wiki/.obsidian/themes/
 
+# MkDocs build output
+_site/
+
 # OS
 .DS_Store
 Thumbs.db
