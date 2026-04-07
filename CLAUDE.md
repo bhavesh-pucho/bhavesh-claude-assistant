@@ -40,6 +40,33 @@ The `wiki/` folder is an **Obsidian vault** and an **LLM knowledge base** (Karpa
 
 **To triage inbox:** Ask Claude to organize `wiki/inbox/` notes into proper folders.
 
+## Obsidian MCP Integration
+
+This repo uses [obsidian-claude-code-mcp](https://github.com/iansinnott/obsidian-claude-code-mcp) to let Claude Code read/write the Obsidian vault directly.
+
+### Setup (one-time)
+
+1. Open `wiki/` folder as an Obsidian vault
+2. Install **Claude Code** plugin from Obsidian Community Plugins
+3. Enable the plugin — MCP server starts on `localhost:22360`
+4. Claude Code auto-connects via `.claude/settings.json` (already configured)
+
+### Available MCP Tools
+
+| Tool | What it does |
+|---|---|
+| `view` | Read file contents from vault |
+| `str_replace` | Find and replace text in notes |
+| `create` | Create new notes |
+| `insert` | Insert content into existing notes |
+| `get_current_file` | Get the currently active file in Obsidian |
+| `get_workspace_files` | List vault structure |
+| `obsidian_api` | Direct Obsidian API access |
+
+### Multiple Vaults
+
+If running multiple vaults, each needs a unique port. Update `.claude/settings.json` accordingly.
+
 ## Conventions
 
 - All config changes go through git — no ad-hoc edits to production config
