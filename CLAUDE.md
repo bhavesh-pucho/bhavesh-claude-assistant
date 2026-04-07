@@ -4,26 +4,46 @@ This repository holds Claude Code configuration, settings, and hooks for **Bhave
 
 ## Purpose
 
-Central hub for all Claude Code session configuration — global CLAUDE.md, settings, hooks, and any shared scripts/tools used across Pucho AI projects.
+Central hub for all Claude Code session configuration — global CLAUDE.md, settings, hooks, and a queryable LLM knowledge base (wiki).
 
 ## Structure
 
 ```
 .
 ├── CLAUDE.md              # This file — project context
+├── global.CLAUDE.md       # Version-tracked copy of ~/.claude/CLAUDE.md
 ├── .claude/
 │   └── settings.json      # Claude Code settings (permissions, hooks)
-└── README.md              # (optional) public-facing docs
+└── wiki/                  # LLM-queryable knowledge base (Obsidian vault)
+    ├── _templates/        # Note templates
+    ├── products/          # Pucho Office, Studio, PuchoSetu, Sportix, etc.
+    ├── infrastructure/    # EC2, Dokploy, Traefik, Nginx, SSL, ZeroTier
+    ├── ml/                # Text-to-SQL, QLoRA, vLLM, IndicF5
+    ├── api/               # Pucho API schema, tool-call format, SSE events
+    ├── architecture/      # Design decisions, policies, ADRs
+    ├── reference/         # Tally schema, Activepieces internals
+    └── inbox/             # Quick captures to triage later
 ```
 
-## Usage
+## Wiki Usage
 
-- Global CLAUDE.md (`~/.claude/CLAUDE.md`) is the single source of truth for all sessions
-- This repo tracks version history of that config
-- Any changes to global Claude Code behavior should be committed here first
+The `wiki/` folder is an **Obsidian vault** and an **LLM knowledge base** (Karpathy-style).
+
+- Each note has a one-line `**Summary**` at the top — Claude reads this to determine relevance
+- Notes use `[[wiki links]]` for cross-references
+- Consistent `**Tags**` across notes enable search
+- For deep lookups, Claude should search the `wiki/` folder before answering domain questions
+
+**To query:** Navigate to this repo and ask Claude Code any question — it will search the wiki notes for answers.
+
+**To add knowledge:** Create a new note from `_templates/note.md`, file it in the right folder.
+
+**To triage inbox:** Ask Claude to organize `wiki/inbox/` notes into proper folders.
 
 ## Conventions
 
 - All config changes go through git — no ad-hoc edits to production config
 - Follow the Ralph loop (read → plan → confirm → execute → verify → update)
 - MIT-first rule applies even to tooling choices
+- Keep notes focused — one topic per file, ~1000 words max
+- Use consistent terminology across notes

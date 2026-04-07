@@ -1,0 +1,13 @@
+{
+  "strictLineBreaks": false,
+  "showLineNumber": true,
+  "spellcheck": true,
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "attachmentFolderPath": "wiki/_attachments",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "inbox"
+}

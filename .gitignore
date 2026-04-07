@@ -1,0 +1,14 @@
+# Obsidian workspace (user-specific, don't track)
+wiki/.obsidian/workspace.json
+wiki/.obsidian/workspace-mobile.json
+wiki/.obsidian/plugins/
+wiki/.obsidian/themes/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+.env
+.env.*
